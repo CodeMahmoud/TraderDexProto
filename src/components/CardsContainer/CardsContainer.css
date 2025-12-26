@@ -1,0 +1,36 @@
+/* Container for all cards */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Smaller min for mobile */
+  gap: 16px;
+  padding: 16px;
+  max-width: 1600px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Tablet: larger cards */
+@media (min-width: 640px) {
+  .cards-container {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+}
+
+/* Desktop: even larger and more space */
+@media (min-width: 1024px) {
+  .cards-container {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px;
+    padding: 32px;
+  }
+}
+
+/* Extra large screens: cap columns for better readability */
+@media (min-width: 1400px) {
+  .cards-container {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 32px;
+  }
+}
