@@ -1,0 +1,193 @@
+
+/* Main Card */
+.pokemon-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative; /* For glow pseudo-elements */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pokemon-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+/* Animated Rarity Glow on Hover */
+.pokemon-card::before {
+  content: '';
+  position: absolute;
+  inset: -6px; /* Slightly larger for bigger glow */
+  border-radius: 16px;
+  background: var(--rarity-glow-color, transparent);
+  box-shadow: 0 0 30px 8px var(--rarity-glow-color, transparent);
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+  transition: opacity 0.4s ease;
+  animation: pulse-glow 4s ease-in-out infinite paused;
+}
+
+.pokemon-card:hover::before {
+  opacity: 0.8;
+  animation-play-state: running;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { 
+    box-shadow: 0 0 20px 4px var(--rarity-glow-color, transparent); 
+    transform: scale(1);
+  }
+  50% { 
+    box-shadow: 0 0 40px 12px var(--rarity-glow-color, transparent); 
+    transform: scale(1.02);
+  }
+}
+
+/* Rarity-Specific Animated Glow Colors & Intensity */
+.rarity-common:hover { --rarity-glow-color: rgba(200, 200, 200, 0.5); }      /* Soft silver pulse */
+.rarity-uncommon:hover { --rarity-glow-color: rgba(100, 200, 255, 0.6); }  /* Blue shimmer */
+.rarity-rare:hover { --rarity-glow-color: rgba(255, 215, 0, 0.8); }         /* Golden pulse */
+.rarity-rare-holo:hover, .rarity-ultra-rare:hover { 
+  --rarity-glow-color: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00, #ff00ff);
+  background: var(--rarity-glow-color);
+  animation: rainbow-pulse 3s linear infinite paused;
+}
+
+@keyframes rainbow-pulse {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+/* Image */
+.card-image {
+  width: 100%;
+  aspect-ratio: 63 / 88;
+  object-fit: contain;
+  background: #f8f8f8;
+}
+
+/* Info Section - Modern Frosted Look */
+.card-info {
+  padding: clamp(8px, 2vw, 16px);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: clamp(6px, 1.5vw, 10px);
+  position: relative;
+  background: linear-gradient(to bottom, 
+    var(--type-tint, rgba(168, 168, 120, 0.1)), 
+    rgba(255, 255, 255, 0.85)
+  );
+  /* Frosted glass effect */
+  /* backdrop-filter: blur(4px);  */
+}
+
+/* Colored Top Bar (kept from your version) */
+.card-info::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 8px;
+  background: var(--type-color, #a8a878);
+  border-radius: 12px 12px 0 0;
+}
+
+/* Text Styles */
+.card-name {
+  margin: 0;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  font-weight: bold;
+  color: #222;
+  text-align: center;
+}
+
+.card-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.hp {
+  font-weight: bold;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  color: #e74c3c;
+}
+
+.type-badge {
+  padding: clamp(4px, 1vw, 8px) clamp(8px, 2vw, 16px);
+  border-radius: 16px;
+  font-size: clamp(0.75rem, 2vw, 0.9rem);
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  font-size: clamp(0.8rem, 2vw, 0.95rem);
+  color: #555;
+}
+
+.rarity {
+  font-style: italic;
+}
+
+.price {
+  font-weight: bold;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  color: #27ae60;
+}
+
+/* Type Colors (for bar, tint, and badge) */
+.pokemon-card.type-grass { --type-color: #78c850; --type-tint: rgba(120, 200, 80, 0.15); }
+.pokemon-card.type-fire { --type-color: #f57d31; --type-tint: rgba(245, 125, 49, 0.15); }
+.pokemon-card.type-water { --type-color: #3699fa; --type-tint: rgba(54, 153, 250, 0.15); }
+.pokemon-card.type-lightning { --type-color: #f8d030; --type-tint: rgba(248, 208, 48, 0.15); }
+.pokemon-card.type-psychic { --type-color: #f85888; --type-tint: rgba(248, 88, 136, 0.15); }
+.pokemon-card.type-fighting { --type-color: #c03028; --type-tint: rgba(192, 48, 40, 0.15); }
+.pokemon-card.type-darkness { --type-color: #705848; --type-tint: rgba(112, 88, 72, 0.15); }
+.pokemon-card.type-metal { --type-color: #b8b8d0; --type-tint: rgba(184, 184, 208, 0.15); }
+.pokemon-card.type-fairy { --type-color: #ee99ac; --type-tint: rgba(238, 153, 172, 0.15); }
+.pokemon-card.type-dragon { --type-color: #7038f8; --type-tint: rgba(112, 56, 248, 0.15); }
+.pokemon-card.type-colorless,
+.pokemon-card.type-normal { --type-color: #a8a878; --type-tint: rgba(168, 168, 120, 0.1); }
+
+/* Type Badge Backgrounds (reuse type-color) */
+.type-grass { background: #78c850; }
+.type-fire { background: #f57d31; }
+/* Add others as needed – same as --type-color values */
+
+/* Rarity Glow on Hover */
+.pokemon-card:hover::after {
+  content: '';
+  position: absolute;
+  inset: -4px; /* Extends beyond card */
+  border-radius: 16px;
+  background: var(--rarity-glow, transparent);
+  box-shadow: 0 0 20px 4px var(--rarity-glow, transparent);
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.8;
+  transition: all 0.4s ease;
+}
+
+/* Rarity-Specific Glow Colors (add more as your data has) */
+.rarity-common:hover { --rarity-glow: rgba(200, 200, 200, 0.6); }      /* Soft gray */
+.rarity-uncommon:hover { --rarity-glow: rgba(100, 200, 255, 0.6); }  /* Blue */
+.rarity-rare:hover { --rarity-glow: rgba(255, 215, 0, 0.8); }         /* Gold */
+.rarity-ultra-rare:hover, .rarity-secret-rare:hover { --rarity-glow: rgba(255, 105, 180, 0.8); } /* Hot pink/rainbow-ish */
+
+
+
+
+.card-info {
+  font-family: 'Poppins', sans-serif;
+}

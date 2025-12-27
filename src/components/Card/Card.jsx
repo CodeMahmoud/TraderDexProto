@@ -1,12 +1,17 @@
 import React from 'react';
 
 import './Card.css'
-function Card({ cardInfo }) {
 
-  const { name, type, hp, rarity, price, image } = cardInfo;
+function Card({ cardData }) {
+console.log('CARD')
+  const { name, type, hp, rarity, price, image } = cardData;
+
+  // Normalize for CSS class names (lowercase, replace spaces)
+  const typeClass = type ? `type-${type.toLowerCase()}` : '';
+  const rarityClass = rarity ? `rarity-${rarity.toLowerCase().replace(/\s+/g, '-')}` : '';
 
   return (
-  <div className={`pokemon-card type-${type.toLowerCase()} rarity-${rarity.toLowerCase().replace(' ', '-')}`}>
+  <div className={`pokemon-card ${typeClass} ${rarityClass}`}>
       <img src={image} alt={name} className="card-image" />
       
       <div className="card-info">
@@ -15,11 +20,7 @@ function Card({ cardInfo }) {
         <div className="card-stats">
           {hp && <span className="hp">HP {hp}</span>}
           
-          {type && (
-            <span className={`type-badge type-${type.toLowerCase()}`}>
-              {type}
-            </span>
-          )}
+          {type && <span className={`type-badge ${typeClass}`}>{type}</span>}
         </div>
         
         <div className="card-footer">
@@ -30,5 +31,5 @@ function Card({ cardInfo }) {
     </div>
   )
 }
-
-export default Card;
+const PureCard = React.memo(Card)
+export default PureCard;
