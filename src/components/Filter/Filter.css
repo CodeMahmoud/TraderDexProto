@@ -1,0 +1,50 @@
+.filter-bar {
+  display: flex;
+  align-items: center;
+  background-color: #2c3e50; /* Dark taskbar color */
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-family: sans-serif;
+  font-size: 14px;
+  gap: 20px;
+  width: fit-content;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.filter-label-text {
+  font-weight: bold;
+  color: #bdc3c7;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.filter-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.filter-item input {
+  cursor: pointer;
+  margin: 0;
+}
+
+.filter-divider {
+  width: 1px;
+  height: 24px;
+  background-color: #455a64;
+}
+
+/* Simple hover effect */
+.filter-item:hover {
+  color: #3498db;
+}
