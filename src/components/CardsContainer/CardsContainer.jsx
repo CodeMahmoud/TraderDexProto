@@ -1,22 +1,14 @@
 import React from 'react';
-import Card from '../Card'
+import PureCard from '../Card'
 import './CardsContainer.css'
 
-function CardsContainer() {
-  const [data, setData] = React.useState([]);
-  React.useEffect(() => {
-  async function fetchEffect() {
-    const response = await fetch('./pokeCardsAPI.json');
-    const dataJson = await response.json();
-    setData(dataJson);
-  }
-  fetchEffect();
-}, [])
+function CardsContainer({ cardData }) {
+ console.log('CONTAINER')
   return (
     <>
     <div className="cards-container">
-      {data.map((cardInfo) => (
-      <Card cardInfo={cardInfo} key={cardInfo.id}/>
+      {cardData.map((cardInfo) => (
+      <PureCard cardData={cardInfo} key={cardInfo.id}/>
       ))}
       </div>
       </>
