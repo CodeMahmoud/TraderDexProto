@@ -4,7 +4,9 @@ import './Navbar.css';
 const Navbar = ({ setActivePage }) => {
   return (
     <nav className="navbar" role="navigation">
+      <a href=''>
       <div className="logo">Poke</div>
+      </a>
       <ul className="nav-links">
         {/* Update state on click */}
         <li><button onClick={() => setActivePage('home')}>Home</button></li>
@@ -14,5 +16,5 @@ const Navbar = ({ setActivePage }) => {
     </nav>
   );
 };
-
-export default Navbar;
+const PureNavbar = React.memo(Navbar);
+export default PureNavbar;
