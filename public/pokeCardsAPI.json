@@ -1,53 +1,452 @@
 [
-  {"id":"swsh1-1","name":"Bulbasaur","type":"Grass","hp":60,"rarity":"Common","price":1.5,"image":"https://images.pokemontcg.io/swsh1/1.png"},
-  {"id":"swsh1-2","name":"Ivysaur","type":"Grass","hp":80,"rarity":"Uncommon","price":3.0,"image":"https://images.pokemontcg.io/swsh1/2.png"},
-  {"id":"swsh1-3","name":"Venusaur","type":"Grass","hp":120,"rarity":"Rare Holo","price":12.0,"image":"https://images.pokemontcg.io/swsh1/3.png"},
-  {"id":"swsh1-4","name":"Charmander","type":"Fire","hp":70,"rarity":"Common","price":2.0,"image":"https://images.pokemontcg.io/swsh1/4.png"},
-  {"id":"swsh1-5","name":"Charmeleon","type":"Fire","hp":90,"rarity":"Uncommon","price":5.0,"image":"https://images.pokemontcg.io/swsh1/5.png"},
-  {"id":"swsh1-6","name":"Charizard","type":"Fire","hp":150,"rarity":"Ultra Rare","price":350.0,"image":"https://images.pokemontcg.io/swsh1/6.png"},
-  {"id":"swsh1-7","name":"Squirtle","type":"Water","hp":60,"rarity":"Common","price":1.8,"image":"https://images.pokemontcg.io/swsh1/7.png"},
-  {"id":"swsh1-8","name":"Wartortle","type":"Water","hp":80,"rarity":"Uncommon","price":3.5,"image":"https://images.pokemontcg.io/swsh1/8.png"},
-  {"id":"swsh1-9","name":"Blastoise","type":"Water","hp":140,"rarity":"Rare Holo","price":25.0,"image":"https://images.pokemontcg.io/swsh1/9.png"},
-  {"id":"swsh1-10","name":"Pikachu","type":"Electric","hp":50,"rarity":"Rare","price":5.0,"image":"https://images.pokemontcg.io/swsh1/10.png"},
-  {"id":"swsh1-11","name":"Raichu","type":"Electric","hp":90,"rarity":"Uncommon","price":7.0,"image":"https://images.pokemontcg.io/swsh1/11.png"},
-  {"id":"swsh1-12","name":"Eevee","type":"Colorless","hp":60,"rarity":"Uncommon","price":3.0,"image":"https://images.pokemontcg.io/swsh1/12.png"},
-  {"id":"swsh1-13","name":"Vaporeon","type":"Water","hp":110,"rarity":"Rare Holo","price":15.0,"image":"https://images.pokemontcg.io/swsh1/13.png"},
-  {"id":"swsh1-14","name":"Jolteon","type":"Electric","hp":100,"rarity":"Rare Holo","price":15.0,"image":"https://images.pokemontcg.io/swsh1/14.png"},
-  {"id":"swsh1-15","name":"Flareon","type":"Fire","hp":100,"rarity":"Rare Holo","price":15.0,"image":"https://images.pokemontcg.io/swsh1/15.png"},
-  {"id":"swsh1-16","name":"Snorlax","type":"Colorless","hp":130,"rarity":"Rare Holo","price":20.0,"image":"https://images.pokemontcg.io/swsh1/16.png"},
-  {"id":"swsh1-17","name":"Mewtwo","type":"Psychic","hp":130,"rarity":"Ultra Rare","price":150.0,"image":"https://images.pokemontcg.io/swsh1/17.png"},
-  {"id":"swsh1-18","name":"Mew","type":"Psychic","hp":100,"rarity":"Ultra Rare","price":120.0,"image":"https://images.pokemontcg.io/swsh1/18.png"},
-  {"id":"swsh1-19","name":"Gengar","type":"Psychic","hp":120,"rarity":"Rare Holo","price":35.0,"image":"https://images.pokemontcg.io/swsh1/19.png"},
-  {"id":"swsh1-20","name":"Gastly","type":"Psychic","hp":50,"rarity":"Common","price":2.0,"image":"https://images.pokemontcg.io/swsh1/20.png"},
-  {"id":"swsh1-21","name":"Haunter","type":"Psychic","hp":80,"rarity":"Uncommon","price":5.0,"image":"https://images.pokemontcg.io/swsh1/21.png"},
-  {"id":"swsh1-22","name":"Machop","type":"Fighting","hp":70,"rarity":"Common","price":2.0,"image":"https://images.pokemontcg.io/swsh1/22.png"},
-  {"id":"swsh1-23","name":"Machoke","type":"Fighting","hp":100,"rarity":"Uncommon","price":6.0,"image":"https://images.pokemontcg.io/swsh1/23.png"},
-  {"id":"swsh1-24","name":"Machamp","type":"Fighting","hp":140,"rarity":"Rare Holo","price":25.0,"image":"https://images.pokemontcg.io/swsh1/24.png"},
-  {"id":"swsh1-25","name":"Onix","type":"Fighting","hp":90,"rarity":"Uncommon","price":5.0,"image":"https://images.pokemontcg.io/swsh1/25.png"},
-  {"id":"swsh1-26","name":"Geodude","type":"Fighting","hp":60,"rarity":"Common","price":1.5,"image":"https://images.pokemontcg.io/swsh1/26.png"},
-  {"id":"swsh1-27","name":"Pidgey","type":"Colorless","hp":40,"rarity":"Common","price":1.0,"image":"https://images.pokemontcg.io/swsh1/27.png"},
-  {"id":"swsh1-28","name":"Pidgeotto","type":"Colorless","hp":70,"rarity":"Uncommon","price":3.0,"image":"https://images.pokemontcg.io/swsh1/28.png"},
-  {"id":"swsh1-29","name":"Pidgeot","type":"Colorless","hp":120,"rarity":"Rare Holo","price":12.0,"image":"https://images.pokemontcg.io/swsh1/29.png"},
-  {"id":"swsh1-30","name":"Rattata","type":"Colorless","hp":30,"rarity":"Common","price":0.5,"image":"https://images.pokemontcg.io/swsh1/30.png"},
-  {"id":"swsh1-31","name":"Raticate","type":"Colorless","hp":80,"rarity":"Uncommon","price":3.0,"image":"https://images.pokemontcg.io/swsh1/31.png"},
-  {"id":"swsh1-32","name":"Magikarp","type":"Water","hp":30,"rarity":"Common","price":0.5,"image":"https://images.pokemontcg.io/swsh1/32.png"},
-  {"id":"swsh1-33","name":"Gyarados","type":"Water","hp":150,"rarity":"Rare Holo","price":45.0,"image":"https://images.pokemontcg.io/swsh1/33.png"},
-  {"id":"swsh1-34","name":"Dratini","type":"Dragon","hp":60,"rarity":"Uncommon","price":4.0,"image":"https://images.pokemontcg.io/swsh1/34.png"},
-  {"id":"swsh1-35","name":"Dragonair","type":"Dragon","hp":90,"rarity":"Rare Holo","price":20.0,"image":"https://images.pokemontcg.io/swsh1/35.png"},
-  {"id":"swsh1-36","name":"Dragonite","type":"Dragon","hp":150,"rarity":"Ultra Rare","price":120.0,"image":"https://images.pokemontcg.io/swsh1/36.png"},
-  {"id":"swsh1-37","name":"Alakazam","type":"Psychic","hp":120,"rarity":"Rare Holo","price":25.0,"image":"https://images.pokemontcg.io/swsh1/37.png"},
-  {"id":"swsh1-38","name":"Abra","type":"Psychic","hp":50,"rarity":"Common","price":1.5,"image":"https://images.pokemontcg.io/swsh1/38.png"},
-  {"id":"swsh1-39","name":"Kadabra","type":"Psychic","hp":80,"rarity":"Uncommon","price":6.0,"image":"https://images.pokemontcg.io/swsh1/39.png"},
-  {"id":"swsh1-40","name":"Sandshrew","type":"Fighting","hp":60,"rarity":"Common","price":1.0,"image":"https://images.pokemontcg.io/swsh1/40.png"},
-  {"id":"swsh1-41","name":"Sandslash","type":"Fighting","hp":110,"rarity":"Rare Holo","price":15.0,"image":"https://images.pokemontcg.io/swsh1/41.png"},
-  {"id":"swsh1-42","name":"Diglett","type":"Fighting","hp":30,"rarity":"Common","price":0.5,"image":"https://images.pokemontcg.io/swsh1/42.png"},
-  {"id":"swsh1-43","name":"Dugtrio","type":"Fighting","hp":90,"rarity":"Uncommon","price":5.0,"image":"https://images.pokemontcg.io/swsh1/43.png"},
-  {"id":"swsh1-44","name":"Clefairy","type":"Fairy","hp":70,"rarity":"Uncommon","price":3.0,"image":"https://images.pokemontcg.io/swsh1/44.png"},
-  {"id":"swsh1-45","name":"Clefable","type":"Fairy","hp":120,"rarity":"Rare Holo","price":20.0,"image":"https://images.pokemontcg.io/swsh1/45.png"},
-  {"id":"swsh1-46","name":"Jigglypuff","type":"Fairy","hp":60,"rarity":"Common","price":1.5,"image":"https://images.pokemontcg.io/swsh1/46.png"},
-  {"id":"swsh1-47","name":"Wigglytuff","type":"Fairy","hp":100,"rarity":"Uncommon","price":6.0,"image":"https://images.pokemontcg.io/swsh1/47.png"},
-  {"id":"swsh1-48","name":"Meowth","type":"Colorless","hp":50,"rarity":"Common","price":1.0,"image":"https://images.pokemontcg.io/swsh1/48.png"},
-  {"id":"swsh1-49","name":"Persian","type":"Colorless","hp":90,"rarity":"Uncommon","price":4.0,"image":"https://images.pokemontcg.io/swsh1/49.png"},
-  {"id":"swsh1-50","name":"Snivy","type":"Grass","hp":60,"rarity":"Common","price":1.5,"image":"https://images.pokemontcg.io/swsh1/50.png"}
+  {
+    "id": "base1-1",
+    "name": "Alakazam",
+    "type": "Psychic",
+    "hp": 80,
+    "rarity": "Rare Holo",
+    "price": 25.0,
+    "image": "https://images.pokemontcg.io/base1/1_hires.png"
+  },
+  {
+    "id": "base1-2",
+    "name": "Blastoise",
+    "type": "Water",
+    "hp": 100,
+    "rarity": "Rare Holo",
+    "price": 150.0,
+    "image": "https://images.pokemontcg.io/base1/2_hires.png"
+  },
+  {
+    "id": "base1-3",
+    "name": "Chansey",
+    "type": "Colorless",
+    "hp": 120,
+    "rarity": "Rare Holo",
+    "price": 20.0,
+    "image": "https://images.pokemontcg.io/base1/3_hires.png"
+  },
+  {
+    "id": "base1-4",
+    "name": "Charizard",
+    "type": "Fire",
+    "hp": 120,
+    "rarity": "Rare Holo",
+    "price": 300.0,
+    "image": "https://images.pokemontcg.io/base1/4_hires.png"
+  },
+  {
+    "id": "base1-5",
+    "name": "Clefairy",
+    "type": "Colorless",
+    "hp": 40,
+    "rarity": "Rare Holo",
+    "price": 18.0,
+    "image": "https://images.pokemontcg.io/base1/5_hires.png"
+  },
+  {
+    "id": "base1-6",
+    "name": "Gyarados",
+    "type": "Water",
+    "hp": 100,
+    "rarity": "Rare Holo",
+    "price": 35.0,
+    "image": "https://images.pokemontcg.io/base1/6_hires.png"
+  },
+  {
+    "id": "base1-7",
+    "name": "Hitmonchan",
+    "type": "Fighting",
+    "hp": 70,
+    "rarity": "Rare Holo",
+    "price": 22.0,
+    "image": "https://images.pokemontcg.io/base1/7_hires.png"
+  },
+  {
+    "id": "base1-8",
+    "name": "Machamp",
+    "type": "Fighting",
+    "hp": 100,
+    "rarity": "Rare Holo",
+    "price": 15.0,
+    "image": "https://images.pokemontcg.io/base1/8_hires.png"
+  },
+  {
+    "id": "base1-9",
+    "name": "Magneton",
+    "type": "Lightning",
+    "hp": 60,
+    "rarity": "Rare Holo",
+    "price": 12.0,
+    "image": "https://images.pokemontcg.io/base1/9_hires.png"
+  },
+  {
+    "id": "base1-10",
+    "name": "Mewtwo",
+    "type": "Psychic",
+    "hp": 90,
+    "rarity": "Rare Holo",
+    "price": 50.0,
+    "image": "https://images.pokemontcg.io/base1/10_hires.png"
+  },
+  {
+    "id": "base1-11",
+    "name": "Nidoking",
+    "type": "Grass",
+    "hp": 90,
+    "rarity": "Rare Holo",
+    "price": 20.0,
+    "image": "https://images.pokemontcg.io/base1/11_hires.png"
+  },
+  {
+    "id": "base1-12",
+    "name": "Ninetales",
+    "type": "Fire",
+    "hp": 80,
+    "rarity": "Rare Holo",
+    "price": 25.0,
+    "image": "https://images.pokemontcg.io/base1/12_hires.png"
+  },
+  {
+    "id": "base1-13",
+    "name": "Poliwrath",
+    "type": "Water",
+    "hp": 90,
+    "rarity": "Rare Holo",
+    "price": 18.0,
+    "image": "https://images.pokemontcg.io/base1/13_hires.png"
+  },
+  {
+    "id": "base1-14",
+    "name": "Raichu",
+    "type": "Lightning",
+    "hp": 80,
+    "rarity": "Rare Holo",
+    "price": 40.0,
+    "image": "https://images.pokemontcg.io/base1/14_hires.png"
+  },
+  {
+    "id": "base1-15",
+    "name": "Venusaur",
+    "type": "Grass",
+    "hp": 100,
+    "rarity": "Rare Holo",
+    "price": 120.0,
+    "image": "https://images.pokemontcg.io/base1/15_hires.png"
+  },
+  {
+    "id": "base1-58",
+    "name": "Pikachu",
+    "type": "Lightning",
+    "hp": 40,
+    "rarity": "Common",
+    "price": 15.0,
+    "image": "https://images.pokemontcg.io/base1/58_hires.png"
+  },
+  {
+    "id": "swsh1-1",
+    "name": "Bulbasaur",
+    "type": "Grass",
+    "hp": 60,
+    "rarity": "Common",
+    "price": 1.5,
+    "image": "https://images.pokemontcg.io/swsh1/1_hires.png"
+  },
+  {
+    "id": "swsh1-2",
+    "name": "Ivysaur",
+    "type": "Grass",
+    "hp": 90,
+    "rarity": "Uncommon",
+    "price": 2.0,
+    "image": "https://images.pokemontcg.io/swsh1/2_hires.png"
+  },
+  {
+    "id": "swsh1-3",
+    "name": "Venusaur",
+    "type": "Grass",
+    "hp": 150,
+    "rarity": "Rare Holo",
+    "price": 12.0,
+    "image": "https://images.pokemontcg.io/swsh1/3_hires.png"
+  },
+  {
+    "id": "base4-1",
+    "name": "Venusaur",
+    "type": "Grass",
+    "hp": 100,
+    "rarity": "Rare Holo",
+    "price": 30.0,
+    "image": "https://images.pokemontcg.io/base4/1_hires.png"
+  },
+  {
+    "id": "xy1-1",
+    "name": "Venusaur-EX",
+    "type": "Grass",
+    "hp": 180,
+    "rarity": "Rare Holo EX",
+    "price": 8.0,
+    "image": "https://images.pokemontcg.io/xy1/1_hires.png"
+  },
+  {
+    "id": "base1-68",
+    "name": "Pikachu",
+    "type": "Lightning",
+    "hp": 40,
+    "rarity": "Common",
+    "price": 10.0,
+    "image": "https://images.pokemontcg.io/base1/68_hires.png"
+  },
+  {
+    "id": "sm1-25",
+    "name": "Pikachu",
+    "type": "Lightning",
+    "hp": 60,
+    "rarity": "Common",
+    "price": 2.0,
+    "image": "https://images.pokemontcg.io/sm1/25_hires.png"
+  },
+  {
+    "id": "xy9-20",
+    "name": "M Charizard-EX",
+    "type": "Fire",
+    "hp": 220,
+    "rarity": "Rare Holo EX",
+    "price": 45.0,
+    "image": "https://images.pokemontcg.io/xy9/20_hires.png"
+  },
+  {
+    "id": "g1-11",
+    "name": "Charizard-EX",
+    "type": "Fire",
+    "hp": 180,
+    "rarity": "Rare Holo EX",
+    "price": 20.0,
+    "image": "https://images.pokemontcg.io/g1/11_hires.png"
+  },
+  {
+    "id": "sm3-20",
+    "name": "Charizard-GX",
+    "type": "Fire",
+    "hp": 250,
+    "rarity": "Rare Holo GX",
+    "price": 35.0,
+    "image": "https://images.pokemontcg.io/sm3/20_hires.png"
+  },
+  {
+    "id": "basep-1",
+    "name": "Pikachu",
+    "type": "Lightning",
+    "hp": 50,
+    "rarity": "Promo",
+    "price": 50.0,
+    "image": "https://images.pokemontcg.io/basep/1_hires.png"
+  },
+  {
+    "id": "ex3-88",
+    "name": "Rayquaza",
+    "type": "Colorless",
+    "hp": 90,
+    "rarity": "Rare Holo",
+    "price": 40.0,
+    "image": "https://images.pokemontcg.io/ex3/88_hires.png"
+  },
+  {
+    "id": "sm11-66",
+    "name": "Mewtwo & Mew-GX",
+    "type": "Psychic",
+    "hp": 270,
+    "rarity": "Rare Holo GX",
+    "price": 25.0,
+    "image": "https://images.pokemontcg.io/sm11/66_hires.png"
+  },
+  {
+    "id": "swsh35-25",
+    "name": "Charizard VMAX",
+    "type": "Fire",
+    "hp": 330,
+    "rarity": "Rare Holo VMAX",
+    "price": 80.0,
+    "image": "https://images.pokemontcg.io/swsh35/25_hires.png"
+  },
+  {
+    "id": "swsh1-25",
+    "name": "Pikachu V",
+    "type": "Lightning",
+    "hp": 190,
+    "rarity": "Rare Holo V",
+    "price": 10.0,
+    "image": "https://images.pokemontcg.io/swsh1/25_hires.png"
+  },
+  {
+    "id": "base2-1",
+    "name": "Alakazam",
+    "type": "Psychic",
+    "hp": 80,
+    "rarity": "Rare Holo",
+    "price": 15.0,
+    "image": "https://images.pokemontcg.io/base2/1_hires.png"
+  },
+  {
+    "id": "base3-1",
+    "name": "Articuno",
+    "type": "Water",
+    "hp": 70,
+    "rarity": "Rare Holo",
+    "price": 25.0,
+    "image": "https://images.pokemontcg.io/base3/1_hires.png"
+  },
+  {
+    "id": "base5-1",
+    "name": "Dark Charizard",
+    "type": "Fire",
+    "hp": 80,
+    "rarity": "Rare Holo",
+    "price": 60.0,
+    "image": "https://images.pokemontcg.io/base5/1_hires.png"
+  },
+  {
+    "id": "ex6-1",
+    "name": "Absol",
+    "type": "Darkness",
+    "hp": 70,
+    "rarity": "Rare Holo",
+    "price": 12.0,
+    "image": "https://images.pokemontcg.io/ex6/1_hires.png"
+  },
+  {
+    "id": "sm12-1",
+    "name": "Butterfree V",
+    "type": "Grass",
+    "hp": 190,
+    "rarity": "Rare Holo V",
+    "price": 5.0,
+    "image": "https://images.pokemontcg.io/sm12/1_hires.png"
+  },
+  {
+    "id": "xy0-1",
+    "name": "Yveltal",
+    "type": "Darkness",
+    "hp": 130,
+    "rarity": "Rare Holo",
+    "price": 8.0,
+    "image": "https://images.pokemontcg.io/xy0/1_hires.png"
+  },
+  {
+    "id": "swsh45-45",
+    "name": "Shiny Charizard V",
+    "type": "Fire",
+    "hp": 220,
+    "rarity": "Shiny Rare",
+    "price": 150.0,
+    "image": "https://images.pokemontcg.io/swsh45/45_hires.png"
+  },
+  {
+    "id": "base1-16",
+    "name": "Zapdos",
+    "type": "Lightning",
+    "hp": 90,
+    "rarity": "Rare Holo",
+    "price": 30.0,
+    "image": "https://images.pokemontcg.io/base1/16_hires.png"
+  },
+  {
+    "id": "base1-17",
+    "name": "Beedrill",
+    "type": "Grass",
+    "hp": 80,
+    "rarity": "Rare",
+    "price": 8.0,
+    "image": "https://images.pokemontcg.io/base1/17_hires.png"
+  },
+  {
+    "id": "base1-18",
+    "name": "Dragonair",
+    "type": "Colorless",
+    "hp": 80,
+    "rarity": "Rare",
+    "price": 10.0,
+    "image": "https://images.pokemontcg.io/base1/18_hires.png"
+  },
+  {
+    "id": "base1-19",
+    "name": "Dugtrio",
+    "type": "Fighting",
+    "hp": 70,
+    "rarity": "Rare",
+    "price": 9.0,
+    "image": "https://images.pokemontcg.io/base1/19_hires.png"
+  },
+  {
+    "id": "base1-20",
+    "name": "Electabuzz",
+    "type": "Lightning",
+    "hp": 70,
+    "rarity": "Rare",
+    "price": 12.0,
+    "image": "https://images.pokemontcg.io/base1/20_hires.png"
+  },
+  {
+    "id": "base1-21",
+    "name": "Electrode",
+    "type": "Lightning",
+    "hp": 80,
+    "rarity": "Rare",
+    "price": 10.0,
+    "image": "https://images.pokemontcg.io/base1/21_hires.png"
+  },
+  {
+    "id": "base1-22",
+    "name": "Pidgeotto",
+    "type": "Colorless",
+    "hp": 60,
+    "rarity": "Rare",
+    "price": 8.0,
+    "image": "https://images.pokemontcg.io/base1/22_hires.png"
+  },
+  {
+    "id": "base1-23",
+    "name": "Arcanine",
+    "type": "Fire",
+    "hp": 100,
+    "rarity": "Uncommon",
+    "price": 15.0,
+    "image": "https://images.pokemontcg.io/base1/23_hires.png"
+  },
+  {
+    "id": "base1-24",
+    "name": "Charmeleon",
+    "type": "Fire",
+    "hp": 80,
+    "rarity": "Uncommon",
+    "price": 12.0,
+    "image": "https://images.pokemontcg.io/base1/24_hires.png"
+  },
+  {
+    "id": "base1-25",
+    "name": "Dewgong",
+    "type": "Water",
+    "hp": 80,
+    "rarity": "Uncommon",
+    "price": 8.0,
+    "image": "https://images.pokemontcg.io/base1/25_hires.png"
+  },
+  {
+    "id": "base1-26",
+    "name": "Dratini",
+    "type": "Colorless",
+    "hp": 40,
+    "rarity": "Uncommon",
+    "price": 10.0,
+    "image": "https://images.pokemontcg.io/base1/26_hires.png"
+  },
+  {
+    "id": "base1-27",
+    "name": "Farfetch'd",
+    "type": "Colorless",
+    "hp": 50,
+    "rarity": "Uncommon",
+    "price": 7.0,
+    "image": "https://images.pokemontcg.io/base1/27_hires.png"
+  }
 ]
-

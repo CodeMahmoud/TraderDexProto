@@ -1,35 +1,55 @@
-/* #root {
-  max-width: 1280px;
+#root {
+  max-width: 100%;     /* Remove the limit */
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem 5%;    /* Optional: small side padding for very wide screens */
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.site-header {
+  text-align: center;
+  padding: 4rem 2rem 3rem;
+  background: linear-gradient(to bottom, #1e293b, #0f172a); /* Matches your dark navbar */
+  color: white;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.site-header h1 {
+  margin: 0;
+  font-size: clamp(2.5rem, 8vw, 5rem); /* Responsive big title */
+  font-weight: 900;
+  color: #ffcb05; /* Pokémon yellow */
+  text-shadow: 0 0 20px rgba(255, 203, 5, 0.6);
+  letter-spacing: 4px;
+  font-family: 'Pokemon Solid', 'Arial Black', sans-serif; /* Optional: add Pokémon font */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.site-subtitle {
+  margin: 1rem 0 0;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  color: #a0aec0;
+  font-weight: 400;
 }
- */
+
+/* Ensure main content has nice top spacing */
+main {
+  flex-grow: 1;
+  background: #0f172a; /* Or your preferred page background */
+}
+
+@font-face {
+  font-family: 'Pokemon GB';
+  src: url('/fonts/Pokemon GB.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+html, body {
+  width: 100%;
+  overflow-x: hidden; /* Prevents any horizontal scroll */
+}
+
+#root {
+  width: 100%;
+  max-width: none;     /* Remove any old 1280px limit */
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
