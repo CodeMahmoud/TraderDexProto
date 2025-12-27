@@ -1,19 +1,17 @@
 import React from 'react';
-import PureCard from '../Card'
-import './CardsContainer.css'
+import Card from '../Card';
+import './CardsContainer.css';
 
 function CardsContainer({ cardData }) {
- console.log('CONTAINER')
   return (
     <>
-    <div className="cards-container">
-      {cardData.map((cardInfo) => (
-      <PureCard cardData={cardInfo} key={cardInfo.id}/>
-      ))}
+      <div className="cards-container">
+        {cardData.map((cardInfo) => (
+          <Card cardData={cardInfo} key={cardInfo.id} />
+        ))}
       </div>
-      </>
-  )
-  
+    </>
+  );
 }
 
 export default CardsContainer;

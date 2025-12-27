@@ -8,7 +8,7 @@ const Navbar = ({ setActivePage }) => {
       <div className="logo">Poke</div>
       </a>
       <ul className="nav-links">
-        {/* Update state on click */}
+        {/* TODO: Update state on click */}
         <li><button onClick={() => setActivePage('home')}>Home</button></li>
         <li><button onClick={() => setActivePage('about')}>About</button></li>
         <li><button onClick={() => setActivePage('contact')}>Contact</button></li>
@@ -16,5 +16,5 @@ const Navbar = ({ setActivePage }) => {
     </nav>
   );
 };
-const PureNavbar = React.memo(Navbar);
-export default PureNavbar;
+
+export default React.memo(Navbar);

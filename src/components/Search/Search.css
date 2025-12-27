@@ -1,0 +1,93 @@
+/* Import the chunky font for the search results */
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@800&display=swap');
+
+.search-wrapper {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+    font-family: 'Exo 2', sans-serif;
+}
+
+/* 1. The Search Input - Pokédex Screen Style */
+.search-input {
+    width: 100%;
+    padding: 15px 25px;
+    font-size: 1.1rem;
+    font-family: 'Exo 2', sans-serif;
+    background-color: #222;
+    /* Dark screen look */
+    border: 4px solid #2a75bb;
+    /* Pokémon Blue border */
+    border-radius: 50px;
+    color: #ffcb05;
+    /* Yellow text */
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.search-input::placeholder {
+    color: rgba(255, 203, 2, 0.5);
+    /* Muted yellow */
+}
+
+.search-input:focus {
+    border-color: #ffcb05;
+    /* Swaps to Yellow on focus */
+    box-shadow: 0 0 15px rgba(255, 203, 5, 0.4);
+}
+
+/* 2. The Results Container */
+.search-wrapper>div:first-of-type {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* 3. Individual Search Result Cards */
+/* Note: Targeted by the div inside the map */
+.search-wrapper div>div[key] {
+    background: white;
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    border: 3px solid #e0e0e0;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.search-wrapper div>div:hover {
+    transform: translateY(-5px);
+    border-color: #2a75bb;
+}
+
+/* Image styling */
+.search-wrapper img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* Text styling within the cards */
+.search-wrapper p {
+    margin: 4px 0;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.search-wrapper p:first-of-type {
+    font-weight: 900;
+    font-size: 1.1rem;
+    color: #2a75bb;
+    text-transform: uppercase;
+}
+
+/* Empty State Message */
+.search-wrapper>p {
+    text-align: center;
+    color: #e3350d;
+    /* Pokemon Red */
+    font-weight: bold;
+    margin-top: 20px;
+}

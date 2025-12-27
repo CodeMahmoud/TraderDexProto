@@ -1,56 +1,93 @@
-import React from "react";
-import './Filter.css'
-function Filter({ setType, setRarity }) {
-  console.log("FILTER");
+import React from 'react';
+import './Filter.css';
+function Filter({ type, rarity, setType, setRarity }) {
   function handleTypeFilterSelect(event) {
     if (event.target.checked) {
-      setType(event.target.value);
+      setType([...type, event.target.value]);
     } else {
-      setType("");
+      const unCheckedType = type.filter((item) => item !== event.target.value);
+      setType(unCheckedType);
     }
   }
   function handleRarityFilterSelect(event) {
     if (event.target.checked) {
-      setRarity(event.target.value);
+      setRarity([...rarity, event.target.value]);
     } else {
-      setRarity("");
+      const unCheckedType = rarity.filter(
+        (item) => item !== event.target.value
+      );
+
+      setRarity(unCheckedType);
     }
   }
   return (
     <div className="filter-bar">
       {/* Type Group */}
+
       <div className="filter-group">
         <span className="filter-label-text">Type:</span>
         <label className="filter-item">
-          <input type="checkbox" value='Grass' onChange={handleTypeFilterSelect} />
+          <input
+            type="checkbox"
+            value="Grass"
+            onChange={handleTypeFilterSelect}
+          />
           Grass
         </label>
         <label className="filter-item">
-          <input type="checkbox" value='Fire' onChange={handleTypeFilterSelect} />
+          <input
+            type="checkbox"
+            value="Fire"
+            onChange={handleTypeFilterSelect}
+          />
           Fire
         </label>
         <label className="filter-item">
-          <input type="checkbox" value='Water' onChange={handleTypeFilterSelect} />
+          <input
+            type="checkbox"
+            value="Water"
+            onChange={handleTypeFilterSelect}
+          />
           Water
         </label>
         <label className="filter-item">
-          <input type="checkbox" value='Electric' onChange={handleTypeFilterSelect} />
+          <input
+            type="checkbox"
+            value="Electric"
+            onChange={handleTypeFilterSelect}
+          />
           Electric
         </label>
-         <label className="filter-item">
-          <input type="checkbox" value='Psychic' onChange={handleTypeFilterSelect} />
+        <label className="filter-item">
+          <input
+            type="checkbox"
+            value="Psychic"
+            onChange={handleTypeFilterSelect}
+          />
           Psychic
         </label>
         <label className="filter-item">
-          <input type="checkbox" value='Fighting' onChange={handleTypeFilterSelect} />
+          <input
+            type="checkbox"
+            value="Fighting"
+            onChange={handleTypeFilterSelect}
+          />
           Fighting
         </label>
         <label className="filter-item">
-          <input type="checkbox" value='Lightning' onChange={handleTypeFilterSelect} />
+          <input
+            type="checkbox"
+            value="Lightning"
+            onChange={handleTypeFilterSelect}
+          />
           Lightning
         </label>
         <label className="filter-item">
-          <input type="checkbox" value='Colorless' onChange={handleTypeFilterSelect} />
+          <input
+            type="checkbox"
+            value="Colorless"
+            onChange={handleTypeFilterSelect}
+          />
           Colorless
         </label>
       </div>
@@ -58,18 +95,31 @@ function Filter({ setType, setRarity }) {
       <div className="filter-divider"></div>
 
       {/* Rarity Group */}
+
       <div className="filter-group">
         <span className="filter-label-text">Rarity:</span>
         <label className="filter-item">
-          <input type="checkbox" value='Rare Holo' onChange={handleRarityFilterSelect} />
+          <input
+            type="checkbox"
+            value="Rare Holo"
+            onChange={handleRarityFilterSelect}
+          />
           Rare Holo
         </label>
         <label className="filter-item">
-          <input type="checkbox" value='Rare' onChange={handleRarityFilterSelect} />
+          <input
+            type="checkbox"
+            value="Rare"
+            onChange={handleRarityFilterSelect}
+          />
           Rare
         </label>
         <label className="filter-item">
-          <input type="checkbox" value='Common' onChange={handleRarityFilterSelect} />
+          <input
+            type="checkbox"
+            value="Common"
+            onChange={handleRarityFilterSelect}
+          />
           Common
         </label>
       </div>
