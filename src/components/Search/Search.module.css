@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@600;800&display=swap');
+
+.Input {
+  box-sizing: border-box;
+  padding-left: 1rem;
+  margin: 0;
+  /* Pokemon Blue Border */
+  border: 3px solid #2a75bb;
+  width: 100%; /* Fill container */
+  height: 3rem;
+  border-radius: 50px; /* Pill shape */
+  font-family: 'Exo 2', sans-serif;
+  font-size: 1rem;
+  background-color: white;
+  color: #333;
+  outline: none;
+  transition: all 0.2s ease;
+
+  &:focus {
+    border-color: #ffcb05; /* Glow Yellow on focus */
+    box-shadow: 0 0 12px rgba(255, 203, 5, 0.5);
+  }
+}
+
+.Label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  /* Pokemon Yellow with Blue Shadow */
+  color: #ffcb05;
+  text-shadow: 1px 1px 0px #2a75bb;
+}
+
+.Popup {
+  box-sizing: border-box;
+  padding-block: 0.5rem;
+  border-radius: 12px;
+  /* Pokédex Red/Dark Slate */
+  background-color: #2c3e50;
+  color: white;
+  width: var(--anchor-width);
+  max-height: 20rem;
+  overflow-y: auto;
+  border: 2px solid #ffcb05;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  font-family: 'Exo 2', sans-serif;
+  z-index: 9999;
+}
+
+.Item {
+  box-sizing: border-box;
+  outline: 0;
+  cursor: pointer;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+  /* Highlight state using Pokemon Blue */
+  &[data-highlighted] {
+    color: #ffcb05;
+    background-color: rgba(42, 117, 187, 0.3);
+  }
+}
+
+/* Updated movie item to Pokemon item */
+.PokemonItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.PokeImage {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.PokeName {
+  font-weight: 800;
+  font-size: 1rem;
+  text-transform: capitalize;
+}
+
+.PokeType {
+  font-size: 0.75rem;
+  opacity: 0.7;
+  font-weight: 400;
+}
+
+.Status {
+  padding: 1rem;
+  font-size: 0.875rem;
+  text-align: center;
+  color: #bdc3c7;
+}
+
+.Spinner {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 3px solid rgba(255, 203, 5, 0.2);
+  border-top: 3px solid #ffcb05;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}

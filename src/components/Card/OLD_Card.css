@@ -1,0 +1,331 @@
+/* Main Card */
+.pokemon-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pokemon-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* Animated Rarity Glow on Hover (cleaned & fixed) */
+.pokemon-card::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 16px;
+  box-shadow: 0 0 30px 8px var(--rarity-glow-color, transparent);
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+  transition: opacity 0.4s ease;
+  animation: pulse-glow 4s ease-in-out infinite paused;
+}
+
+.pokemon-card:hover::before {
+  opacity: 0.8;
+  animation-play-state: running;
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px 4px var(--rarity-glow-color);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 40px 12px var(--rarity-glow-color);
+    transform: scale(1.02);
+  }
+}
+
+/* Rarity Colors (solid colors work best; rainbow via separate class if needed) */
+.rarity-common:hover {
+  --rarity-glow-color: rgba(200, 200, 200, 0.6);
+}
+.rarity-uncommon:hover {
+  --rarity-glow-color: rgba(100, 200, 255, 0.7);
+}
+.rarity-rare:hover {
+  --rarity-glow-color: rgba(255, 215, 0, 0.9);
+} /* Gold */
+.rarity-rare-holo:hover,
+.rarity-ultra-rare:hover {
+  --rarity-glow-color: rgba(255, 20, 147, 0.9);
+} /* Deep pink for holo */
+
+/* Image */
+.card-image {
+  width: 100%;
+  aspect-ratio: 63 / 88;
+  object-fit: contain;
+  background: #f8f8f8;
+}
+
+/* Info Section */
+.card-info {
+  padding: clamp(10px, 2.5vw, 18px);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: clamp(8px, 2vw, 12px);
+  position: relative;
+  background: linear-gradient(
+    to bottom,
+    var(--type-tint, rgba(168, 168, 120, 0.12)),
+    white
+  );
+  font-family: 'Segoe UI', Roboto, system-ui, sans-serif; /* Clean modern default */
+}
+
+/* Colored Top Bar */
+.card-info::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: var(--type-color, #a8a878);
+  border-radius: 12px 12px 0 0;
+}
+
+/* Text Styles - Modern & Readable */
+.card-name {
+  margin: 0;
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  font-weight: 700;
+  color: #222;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.card-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.hp {
+  font-weight: 700;
+  font-size: clamp(1.1rem, 2.8vw, 1.3rem);
+  color: #e74c3c;
+}
+
+.type-badge {
+  padding: clamp(6px, 1.5vw, 10px) clamp(12px, 3vw, 20px);
+  border-radius: 20px;
+  font-size: clamp(0.8rem, 2vw, 0.95rem);
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  font-size: clamp(0.85rem, 2vw, 1rem);
+  color: #444;
+}
+
+.rarity {
+  font-style: italic;
+  font-weight: 600;
+}
+
+.price {
+  font-weight: 700;
+  font-size: clamp(1.1rem, 2.8vw, 1.3rem);
+  color: #27ae60;
+}
+
+/* Type Colors */
+.pokemon-card.type-grass {
+  --type-color: #78c850;
+  --type-tint: rgba(120, 200, 80, 0.15);
+}
+.pokemon-card.type-fire {
+  --type-color: #f57d31;
+  --type-tint: rgba(245, 125, 49, 0.15);
+}
+.pokemon-card.type-water {
+  --type-color: #3699fa;
+  --type-tint: rgba(54, 153, 250, 0.15);
+}
+.pokemon-card.type-lightning {
+  --type-color: #f8d030;
+  --type-tint: rgba(248, 208, 48, 0.15);
+}
+.pokemon-card.type-psychic {
+  --type-color: #f85888;
+  --type-tint: rgba(248, 88, 136, 0.15);
+}
+.pokemon-card.type-fighting {
+  --type-color: #c03028;
+  --type-tint: rgba(192, 48, 40, 0.15);
+}
+.pokemon-card.type-darkness {
+  --type-color: #705848;
+  --type-tint: rgba(112, 88, 72, 0.15);
+}
+.pokemon-card.type-metal {
+  --type-color: #b8b8d0;
+  --type-tint: rgba(184, 184, 208, 0.15);
+}
+.pokemon-card.type-fairy {
+  --type-color: #ee99ac;
+  --type-tint: rgba(238, 153, 172, 0.15);
+}
+.pokemon-card.type-dragon {
+  --type-color: #7038f8;
+  --type-tint: rgba(112, 56, 248, 0.15);
+}
+.pokemon-card.type-colorless,
+.pokemon-card.type-normal {
+  --type-color: #a8a878;
+  --type-tint: rgba(168, 168, 120, 0.1);
+}
+
+/* Type Badge Backgrounds */
+.type-grass {
+  background: #78c850;
+}
+.type-fire {
+  background: #f57d31;
+}
+.type-water {
+  background: #3699fa;
+}
+.type-lightning {
+  background: #f8d030;
+}
+.type-psychic {
+  background: #f85888;
+}
+.type-fighting {
+  background: #c03028;
+}
+.type-darkness {
+  background: #705848;
+}
+.type-metal {
+  background: #b8b8d0;
+}
+.type-fairy {
+  background: #ee99ac;
+}
+.type-dragon {
+  background: #7038f8;
+}
+.type-colorless,
+.type-normal {
+  background: #a8a878;
+}
+
+/* Glow Around Image on Hover */
+.card-image {
+  transition: box-shadow 0.4s ease, transform 0.2s ease;
+  border-radius: 12px 12px 0 0; /* Matches card top corners */
+}
+
+.pokemon-card:hover .card-image {
+  box-shadow: 0 0 30px 8px var(--image-glow-color, transparent);
+  transform: scale(1.02); /* Slight zoom for emphasis */
+  z-index: 1; /* Brings image forward */
+}
+
+/* Type-Based Base Glow Color (matches your type bar) */
+.pokemon-card.type-grass:hover .card-image {
+  --image-glow-color: rgba(120, 200, 80, 0.7);
+} /* Green glow */
+.pokemon-card.type-fire:hover .card-image {
+  --image-glow-color: rgba(245, 125, 49, 0.7);
+} /* Fire orange */
+.pokemon-card.type-water:hover .card-image {
+  --image-glow-color: rgba(54, 153, 250, 0.7);
+} /* Blue */
+.pokemon-card.type-lightning:hover .card-image {
+  --image-glow-color: rgba(248, 208, 48, 0.7);
+} /* Yellow */
+.pokemon-card.type-psychic:hover .card-image {
+  --image-glow-color: rgba(248, 88, 136, 0.7);
+} /* Pink */
+.pokemon-card.type-fighting:hover .card-image {
+  --image-glow-color: rgba(192, 48, 40, 0.7);
+} /* Red-brown */
+.pokemon-card.type-darkness:hover .card-image {
+  --image-glow-color: rgba(112, 88, 72, 0.7);
+} /* Dark */
+.pokemon-card.type-metal:hover .card-image {
+  --image-glow-color: rgba(184, 184, 208, 0.7);
+} /* Steel gray */
+.pokemon-card.type-fairy:hover .card-image {
+  --image-glow-color: rgba(238, 153, 172, 0.7);
+} /* Fairy pink */
+.pokemon-card.type-dragon:hover .card-image {
+  --image-glow-color: rgba(112, 56, 248, 0.7);
+} /* Purple */
+.pokemon-card.type-colorless:hover,
+.pokemon-card.type-normal:hover .card-image {
+  --image-glow-color: rgba(168, 168, 120, 0.5);
+} /* Neutral */
+
+/* Rarity Boost: Intensify/Change Glow for Higher Rarities */
+.rarity-common:hover .card-image {
+  --image-glow-color: rgba(200, 200, 200, 0.5);
+} /* Soft silver, overrides type if needed */
+.rarity-uncommon:hover .card-image {
+  box-shadow: 0 0 35px 10px var(--image-glow-color);
+} /* Slightly stronger */
+.rarity-rare:hover .card-image {
+  --image-glow-color: rgba(255, 215, 0, 0.9); /* Gold override */
+  box-shadow: 0 0 40px 12px var(--image-glow-color);
+}
+.rarity-rare-holo:hover,
+.rarity-ultra-rare:hover .card-image {
+  --image-glow-color: rgba(255, 20, 147, 0.9); /* Deep pink holo */
+  box-shadow: 0 0 50px 15px var(--image-glow-color);
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* --- Enlarged State Logic --- */
+
+/* 1. When expanded, scale up and stay above everything else */
+.pokemon-card.expanded {
+  transform: scale(1.1); /* Adjust to 1.15 or 1.2 if you want it bigger */
+  z-index: 100;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  cursor: zoom-out; /* Visual hint that clicking again shrinks it */
+}
+
+/* 2. Force the glow to stay visible when expanded, even if not hovering */
+.pokemon-card.expanded::before {
+  opacity: 0.9;
+  animation-play-state: running;
+}
+
+/* 3. Ensure the image glow also stays active while expanded */
+.pokemon-card.expanded .card-image {
+  box-shadow: 0 0 35px 10px var(--image-glow-color, rgba(255, 255, 255, 0.5));
+  transform: scale(1.02);
+}
+
+/* 4. Optional: Add a slight border to make the expanded card "pop" */
+.pokemon-card.expanded {
+  transform: scale(1.1);
+  z-index: 50; /* Higher than other cards */
+  position: relative;
+}

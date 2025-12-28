@@ -2,12 +2,16 @@ import React from 'react';
 import Card from '../Card';
 import './CardsContainer.css';
 
-function CardsContainer({ cardData }) {
+function CardsContainer({ cardData, onCardClick }) {
   return (
     <>
       <div className="cards-container">
         {cardData.map((cardInfo) => (
-          <Card cardData={cardInfo} key={cardInfo.id} />
+          <Card
+            cardData={cardInfo}
+            key={cardInfo.id}
+            onCardClick={onCardClick}
+          />
         ))}
       </div>
     </>

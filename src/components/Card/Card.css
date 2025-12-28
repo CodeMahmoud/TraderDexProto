@@ -1,227 +1,192 @@
-/* Main Card */
+/* 1. The Card Frame - Fixed & Modern */
 .pokemon-card {
-  background: white;
+  width: 220px; /* Explicit width for a smaller feel */
+  height: 310px; /* Standard TCG ratio */
+  background: #1a1a1a; /* Dark background for modern look */
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
   position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.pokemon-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
-}
-
-/* Animated Rarity Glow on Hover (cleaned & fixed) */
-.pokemon-card::before {
-  content: '';
-  position: absolute;
-  inset: -6px;
-  border-radius: 16px;
-  box-shadow: 0 0 30px 8px var(--rarity-glow-color, transparent);
-  opacity: 0;
-  pointer-events: none;
-  z-index: -1;
-  transition: opacity 0.4s ease;
-  animation: pulse-glow 4s ease-in-out infinite paused;
-}
-
-.pokemon-card:hover::before {
-  opacity: 0.8;
-  animation-play-state: running;
-}
-
-@keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px 4px var(--rarity-glow-color); transform: scale(1); }
-  50% { box-shadow: 0 0 40px 12px var(--rarity-glow-color); transform: scale(1.02); }
-}
-
-/* Rarity Colors (solid colors work best; rainbow via separate class if needed) */
-.rarity-common:hover { --rarity-glow-color: rgba(200, 200, 200, 0.6); }
-.rarity-uncommon:hover { --rarity-glow-color: rgba(100, 200, 255, 0.7); }
-.rarity-rare:hover { --rarity-glow-color: rgba(255, 215, 0, 0.9); } /* Gold */
-.rarity-rare-holo:hover, .rarity-ultra-rare:hover { --rarity-glow-color: rgba(255, 20, 147, 0.9); } /* Deep pink for holo */
-
-/* Image */
+/* 2. The Image - Contained */
 .card-image {
   width: 100%;
-  aspect-ratio: 63 / 88;
-  object-fit: contain;
-  background: #f8f8f8;
+  height: 100%;
+  object-fit: cover; /* Fills the card modern-style */
+  display: block;
+  transition: transform 0.5s ease;
 }
 
-/* Info Section */
+.pokemon-card:hover .card-image {
+  transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* 3. The Info Overlay - Small & Not in the way */
 .card-info {
-  padding: clamp(10px, 2.5vw, 18px);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  /* Darker gradient for text readability */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, transparent 100%);
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
-  gap: clamp(8px, 2vw, 12px);
-  position: relative;
-  background: linear-gradient(to bottom, var(--type-tint, rgba(168, 168, 120, 0.12)), white);
-  font-family: 'Segoe UI', Roboto, system-ui, sans-serif; /* Clean modern default */
+  gap: 2px;
+  pointer-events: none; /* Clicks go through to the card */
+  transition: opacity 0.3s ease-in-out;
+  opacity: 1; /* Fully visible by default */
 }
 
-/* Colored Top Bar */
-.card-info::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 8px;
-  background: var(--type-color, #a8a878);
-  border-radius: 12px 12px 0 0;
-}
-
-/* Text Styles - Modern & Readable */
+/* 4. Compact Text Styling */
 .card-name {
+  font-size: 0.95rem; /* Smaller font */
+  font-weight: 800;
+  color: #ffcb05;
   margin: 0;
-  font-size: clamp(1.1rem, 3vw, 1.4rem);
-  font-weight: 700;
-  color: #222;
-  text-align: center;
-  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
 .card-stats {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.hp {
-  font-weight: 700;
-  font-size: clamp(1.1rem, 2.8vw, 1.3rem);
-  color: #e74c3c;
-}
-
-.type-badge {
-  padding: clamp(6px, 1.5vw, 10px) clamp(12px, 3vw, 20px);
-  border-radius: 20px;
-  font-size: clamp(0.8rem, 2vw, 0.95rem);
-  font-weight: 700;
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  font-size: 0.75rem; /* Very small stats */
+  font-family: 'Roboto Mono', monospace;
 }
 
 .card-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: auto;
-  font-size: clamp(0.85rem, 2vw, 1rem);
-  color: #444;
-}
-
-.rarity {
-  font-style: italic;
-  font-weight: 600;
+  margin-top: 5px;
+  padding-top: 5px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .price {
-  font-weight: 700;
-  font-size: clamp(1.1rem, 2.8vw, 1.3rem);
-  color: #27ae60;
+  font-size: 0.9rem;
+  color: #4ade80;
+  font-weight: bold;
 }
 
-/* Type Colors */
-.pokemon-card.type-grass { --type-color: #78c850; --type-tint: rgba(120, 200, 80, 0.15); }
-.pokemon-card.type-fire { --type-color: #f57d31; --type-tint: rgba(245, 125, 49, 0.15); }
-.pokemon-card.type-water { --type-color: #3699fa; --type-tint: rgba(54, 153, 250, 0.15); }
-.pokemon-card.type-lightning { --type-color: #f8d030; --type-tint: rgba(248, 208, 48, 0.15); }
-.pokemon-card.type-psychic { --type-color: #f85888; --type-tint: rgba(248, 88, 136, 0.15); }
-.pokemon-card.type-fighting { --type-color: #c03028; --type-tint: rgba(192, 48, 40, 0.15); }
-.pokemon-card.type-darkness { --type-color: #705848; --type-tint: rgba(112, 88, 72, 0.15); }
-.pokemon-card.type-metal { --type-color: #b8b8d0; --type-tint: rgba(184, 184, 208, 0.15); }
-.pokemon-card.type-fairy { --type-color: #ee99ac; --type-tint: rgba(238, 153, 172, 0.15); }
-.pokemon-card.type-dragon { --type-color: #7038f8; --type-tint: rgba(112, 56, 248, 0.15); }
-.pokemon-card.type-colorless,
-.pokemon-card.type-normal { --type-color: #a8a878; --type-tint: rgba(168, 168, 120, 0.1); }
+.type-badge {
+  font-size: 0.6rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
 
-/* Type Badge Backgrounds */
-.type-grass { background: #78c850; }
-.type-fire { background: #f57d31; }
-.type-water { background: #3699fa; }
-.type-lightning { background: #f8d030; }
-.type-psychic { background: #f85888; }
-.type-fighting { background: #c03028; }
-.type-darkness { background: #705848; }
-.type-metal { background: #b8b8d0; }
-.type-fairy { background: #ee99ac; }
-.type-dragon { background: #7038f8; }
-.type-colorless, .type-normal { background: #a8a878; }
+.pokemon-card {
+  width: 220px;
+  height: 310px;
+  background: #1a1a1a;
+  border-radius: 12px;
+  /* CHANGE: Remove or comment out overflow: hidden */
+  /* overflow: hidden; */
 
-/* Glow Around Image on Hover */
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  /* ADD: Ensure the card stays on top of others when it enlarges */
+  z-index: 1;
+}
+
+/* ADD: Scale the WHOLE card, not just the image */
+.pokemon-card:hover {
+  transform: scale(1.05) translateY(-10px); /* Pops up and grows */
+  z-index: 10; /* Brings it to the very front */
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5); /* Adds depth */
+}
+
 .card-image {
-  transition: box-shadow 0.4s ease, transform 0.2s ease;
-  border-radius: 12px 12px 0 0; /* Matches card top corners */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  /* ADD: Match the card's border radius since overflow is gone */
+  border-radius: 12px;
 }
 
-.pokemon-card:hover .card-image {
-  box-shadow: 0 0 30px 8px var(--image-glow-color, transparent);
-  transform: scale(1.02); /* Slight zoom for emphasis */
-  z-index: 1; /* Brings image forward */
-}
-
-/* Type-Based Base Glow Color (matches your type bar) */
-.pokemon-card.type-grass:hover .card-image { --image-glow-color: rgba(120, 200, 80, 0.7); }   /* Green glow */
-.pokemon-card.type-fire:hover .card-image { --image-glow-color: rgba(245, 125, 49, 0.7); }    /* Fire orange */
-.pokemon-card.type-water:hover .card-image { --image-glow-color: rgba(54, 153, 250, 0.7); }   /* Blue */
-.pokemon-card.type-lightning:hover .card-image { --image-glow-color: rgba(248, 208, 48, 0.7); } /* Yellow */
-.pokemon-card.type-psychic:hover .card-image { --image-glow-color: rgba(248, 88, 136, 0.7); }  /* Pink */
-.pokemon-card.type-fighting:hover .card-image { --image-glow-color: rgba(192, 48, 40, 0.7); }  /* Red-brown */
-.pokemon-card.type-darkness:hover .card-image { --image-glow-color: rgba(112, 88, 72, 0.7); }   /* Dark */
-.pokemon-card.type-metal:hover .card-image { --image-glow-color: rgba(184, 184, 208, 0.7); }    /* Steel gray */
-.pokemon-card.type-fairy:hover .card-image { --image-glow-color: rgba(238, 153, 172, 0.7); }    /* Fairy pink */
-.pokemon-card.type-dragon:hover .card-image { --image-glow-color: rgba(112, 56, 248, 0.7); }    /* Purple */
-.pokemon-card.type-colorless:hover,
-.pokemon-card.type-normal:hover .card-image { --image-glow-color: rgba(168, 168, 120, 0.5); }   /* Neutral */
-
-/* Rarity Boost: Intensify/Change Glow for Higher Rarities */
-.rarity-common:hover .card-image { --image-glow-color: rgba(200, 200, 200, 0.5); }      /* Soft silver, overrides type if needed */
-.rarity-uncommon:hover .card-image { box-shadow: 0 0 35px 10px var(--image-glow-color); } /* Slightly stronger */
-.rarity-rare:hover .card-image { 
-  --image-glow-color: rgba(255, 215, 0, 0.9); /* Gold override */
-  box-shadow: 0 0 40px 12px var(--image-glow-color);
-}
-.rarity-rare-holo:hover,
-.rarity-ultra-rare:hover .card-image { 
-  --image-glow-color: rgba(255, 20, 147, 0.9); /* Deep pink holo */
-  box-shadow: 0 0 50px 15px var(--image-glow-color);
-  animation: pulse-glow 3s ease-in-out infinite;
-}
-
-/* --- Enlarged State Logic --- */
-
-/* 1. When expanded, scale up and stay above everything else */
-.pokemon-card.expanded {
-  transform: scale(1.1); /* Adjust to 1.15 or 1.2 if you want it bigger */
-  z-index: 100;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-  cursor: zoom-out; /* Visual hint that clicking again shrinks it */
-}
-
-/* 2. Force the glow to stay visible when expanded, even if not hovering */
-.pokemon-card.expanded::before {
-  opacity: 0.9;
-  animation-play-state: running;
-}
-
-/* 3. Ensure the image glow also stays active while expanded */
-.pokemon-card.expanded .card-image {
-  box-shadow: 0 0 35px 10px var(--image-glow-color, rgba(255, 255, 255, 0.5));
-  transform: scale(1.02);
-}
-
-/* 4. Optional: Add a slight border to make the expanded card "pop" */
-.pokemon-card.expanded {
+/* DELETE OR COMMENT OUT: This caused the "trapped" zoom effect */
+/* .pokemon-card:hover .card-image {
   transform: scale(1.1);
-  z-index: 50; /* Higher than other cards */
-  position: relative; 
+} */
+.card-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, transparent 100%);
+  /* ADD: Match the bottom corners */
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  pointer-events: none;
+}
+/* The container that holds all the cards */
+.cards-grid-container {
+  display: grid;
+  /* ... your grid settings ... */
+
+  /* ADD THIS: */
+  padding: 20px; /* Gives room for the cards on the edges to expand */
+}
+
+/* The individual slot for the card */
+.card-item-wrapper {
+  /* Ensure the wrapper doesn't clip the expansion */
+  overflow: visible !important;
+  perspective: 1000px; /* Optional: adds a 3D feel */
+}
+.pokemon-card {
+  /* ... your existing width/height ... */
+
+  position: relative;
+  overflow: visible; /* Confirm this is visible */
+
+  /* This ensures it scales from the middle outwards */
+  transform-origin: center center;
+
+  /* This helps the browser treat the card as a separate layer */
+  will-change: transform;
+
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.3s ease;
+}
+
+.pokemon-card:hover {
+  /* 1. Scale makes it bigger, TranslateY makes it "pop" up */
+  transform: scale(1.15) translateY(-15px);
+
+  /* 2. Higher Z-index so it floats above all other cards */
+  z-index: 999;
+
+  /* 3. A larger, softer shadow creates the illusion of distance from the page */
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+}
+.pokemon-card:hover .card-info {
+  opacity: 0; /* Becomes invisible when hovering */
+  pointer-events: none; /* Ensures you can't accidentally click ghost text */
+}
+/* Only hide the footer and stats, but keep the name */
+.pokemon-card:hover .card-stats,
+.pokemon-card:hover .card-footer {
+  opacity: 0;
+  transform: translateY(
+    10px
+  ); /* Adds a slight "sliding down" effect as it fades */
+  transition: all 0.3s ease;
+}
+
+/* Optional: Make the name grow slightly to fill the space */
+.pokemon-card:hover .card-name {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
 }
