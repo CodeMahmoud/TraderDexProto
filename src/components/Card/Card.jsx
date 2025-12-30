@@ -4,6 +4,7 @@ import './Card.css';
 
 function Card({ cardData }) {
   const { name, type, hp, rarity, price, image } = cardData;
+  console.log('bud-tests');
 
   const typeClass = type ? `type-${type.toLowerCase()}` : '';
   const rarityClass = rarity
